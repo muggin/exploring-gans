@@ -1,6 +1,7 @@
 # Personal
 .DS_Store
 my-gans/*
+data/*
 .idea/*
 
 # Byte-compiled / optimized / DLL files
