@@ -51,7 +51,7 @@ def repack_mnist(data_path):
                 with open(file_path, 'r') as fd:
                     for line in fd:
                         image = np.array([int(x) for x in line.split(',')[1:]])
-                        archive_contents.append(image.reshape(28, 28))
+                        archive_contents.append(image.reshape(28, 28, 1))
     return np.array(archive_contents).astype(np.uint8)
 
 
