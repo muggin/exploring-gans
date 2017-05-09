@@ -17,8 +17,6 @@ def plot_performance(*metrics):
     different metrics (tuples) should be provided as consecutive arguments
     """
     plt.figure()
-    num_epochs = len(metrics[0][1])
-    plt.plot([0.5]*num_epochs, linestyle=':', color='r', label='d_opt')
     for label, metric in metrics:
         plt.plot(metric, label=label)
     plt.grid()
