@@ -5,6 +5,8 @@ def plot_images(images, image_dims, max_col=4, file_name='', to_file=False):
     for ix, image in enumerate(images):
         plt.subplot(rows, max_col, ix+1)
         plt.imshow(image.reshape(image_dims), cmap='gray_r', interpolation=None)
+	plt.xticks([])
+	plt.yticks([])
     plt.tight_layout()
     plt.show()
 
@@ -15,9 +17,13 @@ def plot_performance(*metrics):
     different metrics (tuples) should be provided as consecutive arguments
     """
     plt.figure()
+    num_epochs = len(metrics[0][1])
+    plt.plot([0.5]*num_epochs, linestyle=':', color='r', label='d_opt')
     for label, metric in metrics:
-        epochs = range(len(metric))
         plt.plot(metric, label=label)
     plt.grid()
+    plt.title('GAN training metrics')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
     plt.legend()
     plt.show()
