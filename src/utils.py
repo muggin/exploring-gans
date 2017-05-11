@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 
 from time import strftime
 
-def plot_images(images, image_dims, max_col=4, to_file=False):
+def plot_images(images, image_dims, max_col=4):
+    fig = plt.figure()
     rows = (len(images)-1)// max_col + 1
     for ix, image in enumerate(images):
         plt.subplot(rows, max_col, ix+1)
@@ -10,11 +11,8 @@ def plot_images(images, image_dims, max_col=4, to_file=False):
 	plt.xticks([])
 	plt.yticks([])
     plt.tight_layout()
-
-    if to_file:
-        fig_name = 'samples_{}.png'.format(time_now())
-        plt.savefig(fig_name, dpi=120)
     plt.show()
+    return fig
 
 def plot_performance(*metrics):
     """
@@ -22,7 +20,7 @@ def plot_performance(*metrics):
     provide multiple tuples in the format (metric-name, metric).
     different metrics (tuples) should be provided as consecutive arguments
     """
-    plt.figure()
+    fig = plt.figure()
     for label, metric in metrics:
         plt.plot(metric, label=label)
     plt.grid()
@@ -31,8 +29,8 @@ def plot_performance(*metrics):
     plt.ylabel('Loss')
     plt.legend()
     fig_name = 'performance_{}.png'.format(time_now())
-    plt.savefig(fig_name, dpi=120)
     plt.show()
+    return fig
 
 def time_now():
     return str(strftime("%Y-%m-%d  %H:%M:%S"))
