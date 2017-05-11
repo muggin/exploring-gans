@@ -3,6 +3,7 @@
 my-gans/*
 data/*
 .idea/*
+src/plots*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
