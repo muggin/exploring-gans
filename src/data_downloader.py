@@ -3,6 +3,7 @@ import urllib
 import argparse
 import shutil
 import tarfile
+import zipfile
 import tempfile
 import numpy as np
 import cPickle as pickle
@@ -19,6 +20,10 @@ def download_and_extract_data(data_urls, extract_path):
             with tarfile.open(data_file, "r:gz") as tar:
                 tar.extractall(extract_path)
             os.remove(data_file)
+        elif 'zip' in data_file:
+            with zipfile.ZipFile(data_file, "r") as zip:
+                zip.extractall(extract_path)
+                os.remove(data_file)
 
 
 def repack_cifar(data_path):
@@ -70,6 +75,21 @@ def repack_lfw(data_path):
     return np.vstack(archive_contents).astype(np.uint8)
 
 
+def repack_lfwcp(data_path):
+    """ Repack lfw data from dir hierarchy to numpy arrays """
+    archive_contents = []
+
+    for root, _, files in os.walk(data_path):
+        for filename in files:
+            if '.jpg' in filename:
+                file_path = os.path.join(root, filename)
+                file_content = simage.imread(file_path)
+                archive_contents.append(file_content[np.newaxis, :])
+
+    # combine data into single numpy array
+    return np.vstack(archive_contents).astype(np.uint8)
+
+
 def dump_data_to_disk(data, data_path):
     """ Serialize numpy arrays using npy """
     with open(data_path, 'wb') as fd:
@@ -84,6 +104,10 @@ datasets_meta = {
     'lfw':   {'urls': ['http://vis-www.cs.umass.edu/lfw/lfw-deepfunneled.tgz'],
               'archive_name': 'lfw-deepfunneled',
               'data_handler': repack_lfw},
+
+    'lfwcp':   {'urls': ['http://conradsanderson.id.au/lfwcrop/lfwcrop_grey.zip'],
+              'archive_name': 'faces',
+              'data_handler': repack_lfwcp},
 
     'mnist': {'urls': ['https://pjreddie.com/media/files/mnist_train.csv',
                        'https://pjreddie.com/media/files/mnist_test.csv'],
