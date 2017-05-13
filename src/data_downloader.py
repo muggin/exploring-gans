@@ -81,7 +81,7 @@ def repack_lfwcp(data_path):
 
     for root, _, files in os.walk(data_path):
         for filename in files:
-            if '.jpg' in filename:
+            if '.pgm' in filename or '.ppm' in filename:
                 file_path = os.path.join(root, filename)
                 file_content = simage.imread(file_path)
                 archive_contents.append(file_content[np.newaxis, :])
@@ -105,8 +105,12 @@ datasets_meta = {
               'archive_name': 'lfw-deepfunneled',
               'data_handler': repack_lfw},
 
-    'lfwcp':   {'urls': ['http://conradsanderson.id.au/lfwcrop/lfwcrop_grey.zip'],
-              'archive_name': 'faces',
+    'lfwcpg':   {'urls': ['http://conradsanderson.id.au/lfwcrop/lfwcrop_grey.zip'],
+              'archive_name': 'lfwcrop_grey',
+              'data_handler': repack_lfwcp},
+
+    'lfwcpc':   {'urls': ['http://conradsanderson.id.au/lfwcrop/lfwcrop_color.zip'],
+              'archive_name': 'lfwcrop_color',
               'data_handler': repack_lfwcp},
 
     'mnist': {'urls': ['https://pjreddie.com/media/files/mnist_train.csv',
@@ -135,6 +139,7 @@ if __name__ == '__main__':
         print 'Downloading data archive...'
         download_and_extract_data(data_meta['urls'], temp_dir)
         data_path = os.path.join(temp_dir, data_meta['archive_name'])
+	print data_path
 
         # repack data
         print 'Repacking data to numpy format...'

@@ -1,9 +1,9 @@
 # Personal
 .DS_Store
 my-gans/*
+experiments/*
 data/*
 .idea/*
-src/plots*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
