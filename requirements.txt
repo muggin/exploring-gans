@@ -1,0 +1,7 @@
+matplotlib==1.5.3
+scikit_image==0.13.0
+tqdm==4.11.2
+scipy==0.18.1
+numpy==1.13.1
+Keras==2.0.3
+skimage==0.0
