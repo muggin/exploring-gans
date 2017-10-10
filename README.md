@@ -8,7 +8,7 @@ Two GAN architectures were implemented from scratch based on the following publi
 Other architectures were explored using code provided by the authors.
 
 
-This project was carried out as part of the DD2424 "Deep Learning for Data Science" course at [KTH Royal Institute of Technology](http://kth.se).
+The project was carried out as part of the DD2424 "Deep Learning for Data Science" course at [KTH Royal Institute of Technology](http://kth.se).
 
 ### Results
 #### MNIST Digits generated with Basic GAN and DCGAN
