@@ -2,8 +2,8 @@
 The goal of this project was to explore the landscape of Generative Adversarial Networks applied to the problem of image generation. 
 
 Two GAN architectures were implemented from scratch based on the following publications:
+- ["Generative Adversarial Networks"](https://arxiv.org/abs/1406.2661) by Goodfellow et al.
 - ["Unsupervised Representation Learning with Deep Convolutional GANs"](https://arxiv.org/abs/1511.06434) by Radford et al.
-- [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) by Goodfellow et al.
 
 Other architectures were explored using code provided by the authors.
 
