@@ -5,8 +5,11 @@ Two GAN architectures were implemented from scratch based on the following publi
 - ["Generative Adversarial Networks"](https://arxiv.org/abs/1406.2661) by Goodfellow et al.
 - ["Unsupervised Representation Learning with Deep Convolutional GANs"](https://arxiv.org/abs/1511.06434) by Radford et al.
 
-Other architectures were explored using code provided by the authors.
+Other architectures were explored using code provided by the authors of publications.
 
+The experiments were conducted using two datasets:
+- [MNIST](http://yann.lecun.com/exdb/mnist/) - the classic dataset containing images of handwritten digits
+- [Labeled Faces in the Wild](http://vis-www.cs.umass.edu/lfw/) - dataset containing cropped images of human faces
 
 The project was carried out as part of the DD2424 "Deep Learning for Data Science" course at [KTH Royal Institute of Technology](http://kth.se).
 
