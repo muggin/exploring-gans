@@ -6,7 +6,7 @@ This project was carried out as part of the DD2424 "Deep Learning for Data Scien
 ### Contributors
 - Amund Vedal (github: [amundv](https://github.com/amundv))
 - Chris Matsoukas (github: [ChrisMats](https://github.com/ChrisMats))
-- Wojciech Kryściński (github: [muggin](https://github.com/muggin/))
+- Wojciech Kryściński (github: [muggin](https://github.com/muggin/)) 
 
 ### References
 Two GAN architectures were implemented from scratch based on the following publications:
