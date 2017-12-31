@@ -4,9 +4,9 @@ The goal of this project was to explore the landscape of Generative Adversarial 
 This project was carried out as part of the DD2424 "Deep Learning for Data Science" course at [KTH Royal Institute of Technology](http://kth.se).
 
 ### Contributors
-- Amund Vedal (github: [amundv](https://github.com/amundv))
-- Chris Matsoukas (github: [ChrisMats](https://github.com/ChrisMats))
 - Wojciech Kryściński (github: [muggin](https://github.com/muggin/)) 
+- Chris Matsoukas (github: [ChrisMats](https://github.com/ChrisMats))
+- Amund Vedal (github: [amundv](https://github.com/amundv))
 
 ### References
 Two GAN architectures were implemented from scratch based on the following publications:
